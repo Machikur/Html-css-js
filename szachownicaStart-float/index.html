@@ -1,0 +1,61 @@
+<!-- 
+Zrób szachownicę wykorzystująć float dla każdego pola
+Nie możesz określić wysokości div z klasą board (określi tylko szerokosć na 30vw)
+
+Wycentruj szachownicę tylko w poziomie. Szachownica ma być position static.
+Szachownica ma mieć 30% szerokości okna przeglądarki i dodatkowo border: 10px czarny.
+
+Tekst ma być pod szachownicą. Właściwość position h1 musi być static.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Szachownica Float</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .board {
+            display: block;
+            width: 30vw;
+            margin: 0 auto;
+            box-sizing: border-box;
+            border: 10px solid black;
+        }
+
+        span {
+            width: 50%;
+            height: calc(30vw / 2);
+            float: left;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="board clearfix">
+        <span class="bg-red"></span>
+        <span></span>
+        <span></span>
+        <span class="bg-red"></span>
+    </div>
+    <h1>Szachownica "float"</h1>
+</body>
+
+</html>

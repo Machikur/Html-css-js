@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 2 - przemieszczenie kwadratu</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            margin: auto;
+
+        }
+
+        button {
+            display: block;
+            margin: 100px auto 0 auto;
+            width: 100px;
+            height: 30px;
+
+        }
+
+        .square {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            top: 0;
+            left: 0;
+            bottom: auto;
+            right: auto;
+            transition: left .5s, top .5s .5s, width .5s .5s,
+                height .5s .5s;
+        }
+
+        button:hover+div.square {
+            width: 100px;
+            height: 100px;
+            top: calc(100% - 100px);
+            left: calc(100% - 100px);
+        }
+    </style>
+</head>
+
+<body>
+    <button>Lecimy!</button>
+    <div class="square"></div>
+</body>
+
+</html>
