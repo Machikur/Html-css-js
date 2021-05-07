@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Projekt Modal - Popup</title>
+  <style>
+    .article {
+      width: 70%;
+      text-align: center;
+      margin: 0 auto;
+      min-height: 200vh;
+    }
+
+    .article.blur {
+      filter: blur(2px);
+    }
+
+    img {
+      padding: 50px 0;
+      width: 100%;
+    }
+
+    .modal.wrap {
+      display: none;
+    }
+
+    .modal-wrap.active {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-wrap.active .modal {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 80%;
+      height: 70%;
+      background-color: black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      border-radius: 20px;
+    }
+
+    .modal .top {
+      flex-basis: 15%;
+      background-color: cadetblue;
+    }
+
+    .modal .middle {
+      flex-grow: 1;
+      background-color: #ccc;
+    }
+
+    .modal .bottom {
+      flex-basis: 15%;
+      background-color: cadetblue;
+    }
+
+    span {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+
+    @media(max-width:800px) {
+      .modal-wrap.active .modal {
+        width: 90%;
+        height: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="article">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, labore unde aspernatur iusto voluptatem deleniti
+      reprehenderit accusantium ut eligendi ea cumque in quo minus, debitis ab neque doloribus repudiandae fuga.</p>
+    <button>Kup teraz</button>
+
+    <img src="image640.jpg" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam aliquid consequuntur quibusdam repudiandae,
+      nesciunt quam explicabo blanditiis, rerum porro odio dolorum unde eligendi suscipit corrupti aut tempore magnam ad
+      cumque.
+      Eum, at neque autem assumenda ducimus libero nemo dolore architecto fugiat sunt? Magni nulla dicta quis quos
+      quibusdam tempore ducimus nihil, ipsam repellendus obcaecati animi ipsa quisquam deleniti velit sapiente.
+      Quisquam obcaecati ipsa aperiam, enim quas non quae explicabo, facere doloribus earum architecto quam commodi
+      possimus tempora nesciunt nobis facilis excepturi fuga perspiciatis, iure voluptate sed! Numquam consequatur
+      laudantium praesentium.
+      Laborum possimus quia, perspiciatis totam earum dolor molestiae cum obcaecati repellendus nisi, doloremque quidem,
+      aut repellat quod recusandae beatae architecto quos. Nisi dolorem magnam distinctio unde aut id nostrum
+      consectetur.
+      Earum assumenda doloribus dolorum officia qui voluptatibus nihil expedita asperiores odit, sunt, totam nemo
+      inventore hic consequuntur dolore, praesentium omnis. Optio sunt iste nobis cum eveniet, at quam ratione vero?</p>
+  </section>
+  <section class="modal-wrap">
+    <div class="modal">
+      <div class="top"></div>
+      <div class="middle"></div>
+      <div class="bottom"></div>
+      <span class="hide">X</span>
+    </div>
+  </section>
+
+
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    // kliknięcie w przycisk
+    // $('.article button').on('click', function () {
+    //  $('.modal-wrap').addClass('active');
+    //  $('.article').addClass('blur');
+    // })
+
+    // $('span.hide').on('click', function () {
+    //  $('.modal-wrap').removeClass('active');
+    //  $('.article').removeClass('blur');
+    // })
+    //WERSJA SKRÓCONA
+    // $('.article button, span.hide').on('click', function () {
+    //  $('.modal-wrap').toggleClass('active');
+    //  $('.article').toggleClass('blur');
+    // })
+
+    //WERSJA JS
+
+    // const btnModal = document.querySelector('.article button');
+    document.querySelector('.article button').addEventListener("click", function () {
+      document.querySelector('.modal-wrap').classList.add('active');
+      document.querySelector('.article').classList.add('blur')
+    })
+
+
+    document.querySelector('span.hide').addEventListener("click", function () {
+      document.querySelector('.modal-wrap').classList.remove('active');
+      document.querySelector('.article').classList.remove('blur')
+    })
+  </script>
+</body>
+
+</html>

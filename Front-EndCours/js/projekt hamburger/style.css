@@ -1,0 +1,41 @@
+.wrapper {
+    margin: 10px 80px;
+    transition: 1s;
+}
+
+.burger {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: 1s ease;
+
+}
+
+.fas {
+    display: none;
+}
+
+i.show {
+    display: block;
+}
+
+aside {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    width: 300px;
+    background-color: black;
+    transition: 1s;
+}
+
+aside.show {
+    left: 0px;
+}
+
+.wrapper.show {
+    margin-left: 310px;
+}

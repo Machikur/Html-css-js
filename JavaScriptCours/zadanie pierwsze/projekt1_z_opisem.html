@@ -1,0 +1,74 @@
+<!-- 
+1. stworzyć plik index.html i strukturę dokumentu
+2. stworzyć przycisk w html
+3. ostylować przycisk i kwadraty, które będę tworzone
+JAVASCRIPT
+1. pobrać przycisk i podpiąć do niego nasłuchiwanie na click
+2. zadeklarować funkcję
+3. w funkcji stworzyć element html (div)
+4. dodać div do strony
+5. stworzyć licznik i uzupełnić zawartość elementu div o wartość licznika
+6. za pomocą instrukcji warunkowej stwierdzić czy dany element jest 5, jeśli tak nadać mu inną klasę 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body button {
+            display: block;
+            margin: 10px auto;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: black;
+            font-size: 50px;
+            line-height: 300px;
+            margin: 50px;
+            float: left;
+            color: white;
+            text-align: center;
+            border: 2px solid black;
+        }
+
+        .circle {
+            background-color: white;
+            border-radius: 50%;
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Utwórz element</button>
+    <script>
+        let counter = 1;
+        let everyFiveCounter = 1;
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', addShape);
+
+        function addShape() {
+            const element = document.createElement('div');
+            element.textContent = counter;
+            if (everyFiveCounter == 5) {
+                element.classList.add("circle");
+                everyFiveCounter = 0;
+            }
+            counter++;
+            everyFiveCounter++;
+            document.body.appendChild(element);
+        }
+    </script>
+
+</body>
+
+</html>

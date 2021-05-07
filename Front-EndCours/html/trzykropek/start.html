@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            position: absolute;
+            font-size: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        span {
+            position: relative;
+        }
+
+        span::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: white;
+            animation: dorts 3s infinite steps(1) reverse both;
+        }
+
+        @keyframes dorts {
+
+            25% {
+                width: 0%;
+            }
+
+            50% {
+                width: 35%;
+            }
+
+            75% {
+                width: 75%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Napis<span>. . .</span></p>
+
+</body>
+
+</html>
